@@ -1,0 +1,138 @@
+{
+  "GENERAL": {
+    "000-000000": {
+      "id": "000-000000",
+      "title": "Undefined Error",
+      "detail": "An error was encountered, but no details were provided.",
+      "meta": {
+        "explanation": "A message from Lee Lunn: This error is the default general case error; it should never be used. Clearly, it has been used or no error object was provided, so you should inspect the stack key in this response, which contains the top portion of the call stack where this error was generated. From the stack information, find where the error was generated and do a Git Blame! If the developer is you, shame on you!  If the developer was me, fix this ASAP!"
+      }
+    },
+    "000-000001": {
+        "id": "000-000001",
+        "title": "Unknown Resource",
+        "detail": "The resource you requested is unknown or you have insufficient rights to access it.",
+        "meta": {
+            "explanation": "This error is typically generated as a result of an undefined model in the schema definition, or an attempt to access a resource that has no endpoint serving it.  If you suspect that the request should succeed, you should first inspect the network request that was sent, and then investigate the schema definition."
+        }
+    },
+    "000-000002": {
+        "id": "000-000002",
+        "title": "General Database Error",
+        "detail": "A database error has occurred.",
+        "meta": {
+            "explanation": "This error is the default database error that is reported when no specific handling of a errors reported by the database has been defined. See the 'databaseError' attribute for futher details."
+        }
+    },
+    "000-000003": {
+        "id": "000-000003",
+        "title": "Database Access Denied",
+        "detail": "You do not have access to this database.",
+        "meta": {
+            "explanation": "This error is usually caused by a request using credentials that do not have access to the database.  Likely reasons is that the user is not authenticated, is not a member of a role that has access, or the database security document has not been configured."
+        }
+    },
+    "000-000004": {
+        "id": "000-000004",
+        "title": "Database Access Denied",
+        "detail": "You do not have access to this resource.",
+        "meta": {
+            "explanation": "This error is usually caused by a request using credentials that do not have access to the resource as defined in the access control list for this resource type.  Likely reasons is that the user is not authenticated, is not a member of a role that has access at the schema or document level."
+        }
+    },
+    "000-000005": {
+        "id": "000-000005",
+        "title": "Invalid Request",
+        "detail": "An attempt to create a record failed because no data was provided.",
+        "meta": {
+          "explanation": "This error is typically generated in the default request 'setup' hook for creating a new resource and means no post data was provided in the request."
+        }
+    },
+    "000-000006": {
+        "id": "000-000006",
+        "title": "Insufficient Permission",
+        "detail": "An attempt to create a record failed because the user credentials do not have schema access to create the resource.",
+        "meta": {
+          "explanation": "This error typically occurs in the default 'before_action' hook during a create user request. It typically indicates that the passed credentials is not included in the schema access control."
+        }
+    },
+    "000-000007": {
+        "id": "000-000007",
+        "title": "Resource Creation Failed",
+        "detail": "An attempt to create a resource was made, but the database server reported an error.",
+        "meta": {}
+    },
+    "000-000008": {
+        "id": "000-000008",
+        "title": "Resource Retrieval Failed",
+        "detail": "An attempt to fetch a resource during a delete option failed due to a database error.",
+        "meta": {}
+    },
+    "000-000009": {
+        "id": "000-000009",
+        "title": "Insufficient Permission",
+        "detail": "An attempt to delete a resource was made, but the credentials provided do not have sufficient schema or document level access.",
+        "meta": {
+          "explanation": "This error usually occurs in the default 'before_action' hook during a delete resource request. It typically indicates that the passed credentials is not included in the schema access control."
+        }
+    },
+    "000-000010": {
+        "id": "000-000010",
+        "title": "Mismatched Document Ids",
+        "detail": "The id of the document retrieved from the server does not match the id of the document requested.",
+        "meta": {
+          "explanation": "This error typically occurs in the default 'before_action' hook during a delete request for a resource when the posted id of the resource does not match the id of the resource in the document fetched."
+        }
+    },
+    "000-000011": {
+        "id": "000-000011",
+        "title": "Resource Deletion Failed",
+        "detail": "An attempt to delete a resource was made, but the database server reported an error.",
+        "meta": {}
+    },
+    "000-000012": {
+        "id": "000-000012",
+        "title": "Resource Retrieval Failed",
+        "detail": "An attempt to fetch a resource during an update option failed due to a database error.",
+        "meta": {}
+    },
+    "000-000013": {
+        "id": "000-000013",
+        "title": "Insufficient Permission",
+        "detail": "An attempt to update a resource was made, but the credentials provided does not have sufficient schema or document level access.",
+        "meta": {
+          "explanation": "This error usually occurs in the default 'before_action' hook during an update resource request. It typically indicates that the passed credentials is not included in the schema access control."
+        }
+    },
+    "000-000014": {
+        "id": "000-000014",
+        "title": "Mismatched Document Ids",
+        "detail": "The id of the document retrieved from the server does not match the id of the document posted.",
+        "meta": {
+          "explanation": "This error typically occurs in the default 'before_action' hook during an update request for a resource when the posted id of the resource does not match the id of the resource in the document fetched."
+        }
+    },
+    "000-000015": {
+        "id": "000-000015",
+        "title": "Mismatched Document Rev",
+        "detail": "This 'rev' of the document retrieved from the server does not match the 'rev' of the document posted.",
+        "meta": {
+          "explanation": "This error typically occurs in the default 'before_action' hook during an update request for a resource when the posted rev of the resource does not match the rev of the resource in the document fetched."
+        }
+    },
+    "000-000016": {
+        "id": "000-000016",
+        "title": "Resource Update Failed",
+        "detail": "An attempt to update a resource was made, but the database server reported an error.",
+        "meta": {}
+    },
+    "000-000017": {
+        "id": "000-000017",
+        "title": "Template Not Found",
+        "detail": "An attempt to retrieve an email template was made, but no template was found.",
+        "meta": {
+          "explanation": "This error occurs when an attempting to load a template of a specific type for an organization, but neither a default template nor an organization template could be located for the type requested.  Further, this is the default error code in the absence of a more specific code being provided at the point in code attempting the load.  Coders should define a unique error code for this condition in order to improve the ability to source problems."
+        }
+    }
+  }
+}

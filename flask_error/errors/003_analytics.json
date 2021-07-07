@@ -1,0 +1,12 @@
+{
+  "ANALYTICS": {
+    "NON-AUTHENTICATED-REQUEST": {
+        "id": "003-000001",
+        "title": "Access Denied",
+        "detail": "You do not have access to this resource.",
+        "meta": {
+            "explanation": "This error is caused by a request using credentials that have are not currently authenticated, or no credentials were provided.  Typically, this is caused because the users auth token has expired due to inactivity."
+        }
+    }
+  }
+}

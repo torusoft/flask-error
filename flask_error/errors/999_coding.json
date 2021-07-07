@@ -1,0 +1,74 @@
+{
+  "CODING": {
+    "999-000001": {
+      "id": "999-000001",
+      "title": "Type Error",
+      "detail": "An attempt to register an error was made, but the error argument was not a valid error object.",
+      "meta": {}
+    },
+    "999-000002": {
+      "id": "999-000002",
+      "title": "Missing Attributes",
+      "detail": "An attempt to register an error was made, but the 'id' attribute was missing from the error object.",
+      "meta": {}
+    },
+    "999-000003": {
+      "id": "999-000003",
+      "title": "Missing Attributes",
+      "detail": "An attempt to register an error was made, but the 'title' attribute was missing from the error object.",
+      "meta": {}
+    },
+    "999-000004": {
+      "id": "999-000004",
+      "title": "Missing Attributes",
+      "detail": "An attempt to register an error was made, but the 'detail' attribute was missing from the error object.",
+      "meta": {}
+    },
+    "999-000005": {
+      "id": "999-000005",
+      "title": "Missing Attributes",
+      "detail": "An attempt to register an error was made, but the 'meta' attribute was missing from the error object.",
+      "meta": {}
+    },
+    "999-000006": {
+      "id": "999-000006",
+      "title": "Missing Endpoint Configuration",
+      "detail": "A valid endpoint config object in the requests global context is required, but none was found",
+      "meta": {
+          "explanation": "This error is typically a result of overriding the 'enter' hook, and using the default implementation of the 'setup' hook, but not retrieving and setting the endpoint configuration from the schema.  For further details, see the documentation for overriding default endpoint behaviour."
+      }
+    },
+    "999-000007": {
+      "id": "999-000007",
+      "title": "Type Error",
+      "detail": "An attempt to register a couch error was made, but the provided argument is not an instance of CouchError.",
+      "meta": {
+          "explanation": "This error is caused by not passing a valid CouchError instance."
+      }
+    },
+    "999-000008": {
+      "id": "999-000008",
+      "title": "Expected Errors",
+      "detail": "The request was aborted due to a non-true value being returned from a hook, but no errors were registered.",
+      "meta": {
+          "explanation": "This error is caused by returning from a request hook with a non-True value, which preempts further hook processing and aborts the request with the errors that were registered, but no errors has been registered.  This is likely a programming error; see the stack frames for the likely source of the problem."
+      }
+    },
+    "999-000009": {
+      "id": "999-000009",
+      "title": "Invalid Request URL",
+      "detail": "The request was aborted because the id could not be extracted from the request url path.",
+      "meta": {
+          "explanation": "This error is caused by an exception being generated while attempting to split the request url, but the url is contained no forward slahses.  It should never occur and indicates something more serious!"
+      }
+    },
+    "999-000010": {
+      "id": "999-000010",
+      "title": "Invalid Account Type",
+      "detail": "The request was aborted because an unknown account type for activation was sent.",
+      "meta": {
+          "explanation": "This error is caused by sending a request to email an activation email, but the provided account type is not known to the API server."
+      }
+    }
+  }
+}

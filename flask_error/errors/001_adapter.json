@@ -1,0 +1,62 @@
+{
+  "ADAPTER": {
+      "001-000000": {
+          "id": "",
+          "title": "",
+          "detail": "",
+          "meta": {}
+      },
+      "001-000001": {
+          "id": "001-000001",
+          "title": "Invalid Document Structure",
+          "detail": "The document to be serialized does not contain the '_id' attribute.",
+          "meta": {}
+      },
+      "001-000002": {
+          "id": "001-000002",
+          "title": "Invalid Document Structure",
+          "detail": "The document to be serialized does not contain the '_rev' attribute.",
+          "meta": {}
+      },
+      "001-000003": {
+          "id": "001-000003",
+          "title": "Create Attachment Failed",
+          "detail": "An attempt to add an attachment for an unknown resource, or a resource with no configuration information was made.",
+          "meta": {
+              "explanation": "This error has occurred as a result of missing endpoint configuration for the resource model you are attempting to add a model to.  Typically, this is caused by a missing model definition in the schema or a malformed URL."
+          }
+      },
+      "001-000004": {
+          "id": "001-000004",
+          "title": "Fetch Attachment Failed",
+          "detail": "An attempt to retrieve an attachment for an unknown resource, or a resource with no configuration information was made.",
+          "meta": {
+              "explanation": "This error has occurred as a result of missing endpoint configuration for the resource model you are attempting to add a model to.  Typically, this is caused by a missing model definition in the schema or a malformed URL."
+          }
+      },
+      "001-000005": {
+          "id": "001-000005",
+          "title": "Delete Attachment Failed",
+          "detail": "An attempt to remove an attachment for an unknown resource, or a resource with no configuration information was made.",
+          "meta": {
+              "explanation": "This error has occurred as a result of missing endpoint configuration for the resource model you are attempting to add a model to.  Typically, this is caused by a missing model definition in the schema or a malformed URL."
+          }
+      },
+      "001-000006": {
+          "id": "001-000006",
+          "title": "Create Attachment Failed",
+          "detail": "An attempt to create an attachment failed due to a database error.",
+          "meta": {
+              "explanation": "This error has occurred as a result of the database server generating an error response.  This typically occurs when attempting to create an attachment for a document that does not exist, or an out-of-date rev id. Other possible reasons may be insufficient credentials or an expired auth token."
+          }
+      },
+      "001-000007": {
+          "id": "001-000007",
+          "title": "Delete Attachment Failed",
+          "detail": "An attempt to delete an attachment failed due to a database error.",
+          "meta": {
+              "explanation": "This error has occurred as a result of the database server generating an error response.  This typically occurs when attempting to delete an attachment for a document that does not exist, an out-of-date rev id. Other possible reasons may be insufficient credentials, an expired auth token, the attachment itself doesn't exist or has already been deleted."
+          }
+      }
+  }
+}
