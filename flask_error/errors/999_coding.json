@@ -41,9 +41,9 @@
     "999-000007": {
       "id": "999-000007",
       "title": "Type Error",
-      "detail": "An attempt to register a couch error was made, but the provided argument is not an instance of CouchError.",
+      "detail": "An attempt to register a couch error was made, but the provided argument is not a database error object.",
       "meta": {
-          "explanation": "This error is caused by not passing a valid CouchError instance."
+          "explanation": "This error is caused by not passing a valid database error object instance."
       }
     },
     "999-000008": {
