@@ -69,6 +69,14 @@
       "meta": {
           "explanation": "This error is caused by sending a request to email an activation email, but the provided account type is not known to the API server."
       }
+    },
+    "ERROR-KEY-NOT-PROVIDED": {
+      "id": "999-000011",
+      "title": "Required Argument Missing",
+      "detail": "The request was aborted because an error key was not provided.",
+      "meta": {
+          "explanation": "This error is caused by calling a function that required an error_key attribute, but it was not provided."
+      }
     }
   }
 }
