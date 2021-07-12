@@ -1,10 +1,85 @@
 {
   "AUTHENTICATION": {
-    "002-000000": {
-        "id": "",
-        "title": "",
-        "detail": "",
-        "meta": {}
+    "AUTHENTICATE-UNEXPECTED-OR-MISSING-KEYS": {
+        "id": "002-000000",
+        "title": "Authentication Failed",
+        "detail": "An attempt to authenticate was made, but the provided data is invalid.",
+        "meta": {
+            "explanation": "This error is reported when an attempt to authenticate was made with an invalid payload."
+        }
+    },
+    "INVALID-TOKEN-FOR-RESTORE": {
+        "id": "002-000001",
+        "title": "Authentication Failed",
+        "detail": "An attempt to restore a session was made, but failed because the authentication token is invalid.",
+        "meta": {
+            "explanation": "This error is reported when an attempt to restore a previously authenticated session was made, but a valid auth token was not provided as either a header or a cookie."
+        }
+    },
+    "ROLE-NOT-ALLOWED-FOR-RESTORE": {
+        "id": "002-000002",
+        "title": "Authentication Failed",
+        "detail": "An attempt to restore a session was made, but failed because this account is not permitted to access this endpoint.",
+        "meta": {
+            "explanation": "This error is reported when an attempt to restore a previously authenticated session was made by a user that is not a member of the allowed roles permitted to authenticate at this endpoint."
+        }
+    },
+
+    "ROLE-NOT-ALLOWED-FOR-CLOSE": {
+        "id": "002-000003",
+        "title": "Session Close Failed",
+        "detail": "An attempt to close a session was made, but failed because this account is not permitted to access this endpoint.",
+        "meta": {
+            "explanation": "This error is reported when an attempt to close a previously authenticated session was made by a user that is not a member of the allowed roles permitted to authenticate at this endpoint."
+        }
+    },
+    "ROLE-NOT-ALLOWED-FOR-AUTHENTICATION": {
+        "id": "002-000003",
+        "title": "Authentication Failed",
+        "detail": "An attempt to authenticate was made, but this account has insufficent access to use this application.",
+        "meta": {
+            "explanation": "This error is reported when an attempt to authenticate has succeeded, but the user account is not a member of any of the roles permitted to authenticate."
+        }
+    },
+    "INVALID-CREDENTIALS": {
+        "id": "002-000004",
+        "title": "Authentication Failed",
+        "detail": "An attempt to authenticate was made, but the provided credentials are not valid.",
+        "meta": {
+            "explanation": "This error is reported when an attempt to authenticate was, but either the username or password are incorrect."
+        }
+    },
+    "ACCOUNT-DISABLED": {
+        "id": "002-000005",
+        "title": "Authentication Failed",
+        "detail": "An attempt to authenticate was made, but the account is disabled.",
+        "meta": {
+            "explanation": "This error is reported when an attempt to authenticate was, but either the account is set as disabled."
+        }
+    },
+    "ACCOUNT-NOT-ACTIVATED": {
+        "id": "002-000006",
+        "title": "Authentication Failed",
+        "detail": "An attempt to authenticate was made, but the account is not currently activated.",
+        "meta": {
+            "explanation": "This error is reported when an attempt to authenticate was, but either the account has not yet been activated."
+        }
+    },
+    "ACCOUNT-STATE-UNKNOWN": {
+        "id": "002-000007",
+        "title": "Authentication Failed",
+        "detail": "An attempt to authenticate was made, but the account state is not known.",
+        "meta": {
+            "explanation": "This error is reported when an attempt to authenticate was, but the authenticator does not understand the account state value."
+        }
+    },
+    "FAILED-TO-RETRIEVE-ACCOUNT-RECORD": {
+        "id": "002-000008",
+        "title": "Authentication Failed",
+        "detail": "An attempt to authenticate was successful, but the account could not be retrieved.",
+        "meta": {
+            "explanation": "This error is reported after a successful authentication was made, but the attempt to fetch the user document produced a database error."
+        }
     }
   }
 }
