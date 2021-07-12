@@ -1,9 +1,7 @@
-from    flask import current_app
-
 import  copy
-import  couchapy
-import  flask
-
+import  deprecation
+from    flask import current_app, g, request, abort, jsonify, make_response
+from    flask_torusoft_api_core import __version__
 import  inspect
 import  json
 from    os import listdir
@@ -11,9 +9,9 @@ from    os.path import isfile, join, dirname
 
 
 class FlaskApiError():
-    def __init__(self, app=None, folders=[], files=[]):
+    def __init__(self, app=None, folders=[], files=[], db_error_type=None):
         self.app = app
-
+        self._db_error_type = db_error_type
         self._definition_folders = [f"{dirname(__file__)}/errors"] + folders
         self._definition_files = files
 
@@ -45,7 +43,7 @@ class FlaskApiError():
                         setattr(self, error_key, errors[error_key])
 
     def errors_exist(self, **kwargs):
-        return flask.g.get('response_errors', None) is not None
+        return g.get('response_errors', None) is not None
 
     def register(self, error=None, **kwargs):
         includeFrameDetail = kwargs.get('includeFrame', False)
@@ -75,17 +73,17 @@ class FlaskApiError():
 
         # if we are here, then the error argument is at least valid,
         # so carry on with the work to do...
-        response_errors = flask.g.get('response_errors', None)
+        response_errors = g.get('response_errors', None)
 
         if response_errors is None:
             response_errors = []
-            flask.g.response_errors = response_errors
+            g.response_errors = response_errors
 
         if error is not None:
             error = copy.deepcopy(error)
             error['meta'] = {**error['meta'], **kwargs.get('meta', {})}
-            error['meta']['containedAuthToken'] = flask.request.cookies.get('AuthSession', None) is not None
-            error['meta']['url'] = flask.request.url
+            error['meta']['containedAuthToken'] = request.cookies.get('AuthSession', None) is not None
+            error['meta']['url'] = request.url
 
         # intentionally overwrite any error information passed as the
         # general default error even if error information was provided.
@@ -105,17 +103,22 @@ class FlaskApiError():
         return len(response_errors)
 
     def register_couch_error(self, couch_result):
-        if not isinstance(couch_result, couchapy.CouchError):
+        if not isinstance(couch_result, self._db_error_type):
             self.register(self.CODING['999-000007'], includeFrame=True)
+            self.abort_on_errors(status_code=500)
 
         if couch_result.reason == 'You are not allowed to access this db.':
             self.register(self.GENERAL['000-000003'])
         else:
             self.register(self.GENERAL['000-000002'], meta={'databaseError': couch_result.__dict__})
 
+    def is_db_error(self, object):
+        return isinstance(object, self._db_error_type)
+
+    @deprecation.deprecated(deprecated_in="0.1.0", removed_in="1.0.0", current_version=__version__, details="Use is_db_error()")
     def is_couch_error(self, response):
-        return isinstance(response, couchapy.CouchError)
+        return isinstance(response, self._db_error_type)
 
     def abort_on_errors(self, status_code=400):
-        if flask.g.get('response_errors', None) is not None:
-            flask.abort(flask.make_response(flask.jsonify({'errors': flask.g.get('response_errors')}), status_code))
+        if g.get('response_errors', None) is not None:
+            abort(make_response(jsonify({'errors': g.get('response_errors')}), status_code))
