@@ -77,6 +77,47 @@
       "meta": {
           "explanation": "This error is caused by calling a function that required an error_key attribute, but it was not provided."
       }
+    },
+    "GET-DB-CONNECTION-FROM-CONFIG-REQUIRES-USERNAME-PASSWORD": {
+      "id": "999-000011",
+      "title": "Missing Arguments",
+      "detail": "The request was aborted because there are missing arguments in the call to 'get_db_connection'",
+      "meta": {
+        "explanation": "This error is caused when a call to 'get_db_connection' is made with the 'from_config' argument set to True, but the 'user_name' and/or 'password' arguments were not also specified."
+      }
+    },
+    "GET-DB-CONNECTION-FROM-CONFIG-HAS-INVALID-KEYS": {
+      "id": "999-000012",
+      "title": "Missing Keys",
+      "detail": "The request was aborted because there are missing keys in the 'get_db_connection' arguments.",
+      "meta": {
+        "explanation": "This error is caused when a call to 'get_db_connection' is made with the 'from_config' argument set to True, but other arguments referenced config keys that do not exist."
+      }
+    },
+    "GET-DB-CONNECTION-FROM-CONFIG-HAS-MISSING-HOST": {
+      "id": "999-000013",
+      "title": "Missing Key",
+      "detail": "The request was aborted because there are missing keys in the 'get_db_connection' arguments.",
+      "meta": {
+        "explanation": "This error is caused when a call to 'get_db_connection' is made with the 'from_config' argument set to True and a host has been provided, but the key does not exist in the config file."
+      }
+    },
+    "GET-DB-CONNECTION-FROM-CONFIG-HAS-MISSING-PORT": {
+      "id": "999-000014",
+      "title": "Missing Key",
+      "detail": "The request was aborted because there are missing keys in the 'get_db_connection' arguments.",
+      "meta": {
+        "explanation": "This error is caused when a call to 'get_db_connection' is made with the 'from_config' argument set to True and a port has been provided, but the key does not exist in the config file."
+      }
+    },
+    "GET-DB-CONNECTION-FROM-CONFIG-HAS-MISSING-DB": {
+      "id": "999-000015",
+      "title": "Missing Key",
+      "detail": "The request was aborted because there are missing keys in the 'get_db_connection' arguments.",
+      "meta": {
+        "explanation": "This error is caused when a call to 'get_db_connection' is made with the 'from_config' argument set to True and a db name has been provided, but the key does not exist in the config file."
+      }
     }
+
   }
 }
