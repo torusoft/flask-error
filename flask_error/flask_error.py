@@ -46,7 +46,7 @@ class FlaskApiError():
         return g.get('response_errors', None) is not None
 
     def register(self, error=None, **kwargs):
-        includeFrameDetail = kwargs.get('includeFrame', False)
+        includeFrameDetail = kwargs.get('include_frame', kwargs.get('includeFrame', False))
         callStackLimit = kwargs.get('frame_limit', 5)
 
         # don't raise on invalid arguments, instead report errors
