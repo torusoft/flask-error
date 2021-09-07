@@ -102,15 +102,15 @@ class FlaskApiError():
 
         return len(response_errors)
 
-    def register_couch_error(self, couch_result):
+    def register_couch_error(self, couch_result, **kwargs):
         if not isinstance(couch_result, self._db_error_type):
             self.register(self.CODING['999-000007'], includeFrame=True)
             self.abort_on_errors(status_code=500)
 
         if couch_result.reason == 'You are not allowed to access this db.':
-            self.register(self.GENERAL['000-000003'])
+            self.register(self.GENERAL['000-000003'], **kwargs)
         else:
-            self.register(self.GENERAL['000-000002'], meta={'databaseError': couch_result.__dict__})
+            self.register(self.GENERAL['000-000002'], meta={'databaseError': couch_result.__dict__}, **kwargs)
 
     def is_db_error(self, object):
         return isinstance(object, self._db_error_type)
