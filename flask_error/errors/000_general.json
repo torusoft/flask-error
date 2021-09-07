@@ -66,7 +66,9 @@
         "id": "000-000008",
         "title": "Resource Retrieval Failed",
         "detail": "An attempt to fetch a resource during a delete option failed due to a database error.",
-        "meta": {}
+        "meta": {
+          "explanation": "This error typically occurs in the default 'before_action' hook during a delete request. It typically indicates that the document being deleted doesn't exist."
+        }
     },
     "000-000009": {
         "id": "000-000009",
