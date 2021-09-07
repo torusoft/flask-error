@@ -86,12 +86,12 @@
         "explanation": "This error is caused when a call to 'get_db_connection' is made with the 'from_config' argument set to True, but the 'user_name' and/or 'password' arguments were not also specified."
       }
     },
-    "GET-DB-CONNECTION-FROM-CONFIG-HAS-INVALID-KEYS": {
+    "GET-DB-CONNECTION-HAS-INVALID-KEYS": {
       "id": "999-000012",
       "title": "Missing Keys",
       "detail": "The request was aborted because there are missing keys in the 'get_db_connection' arguments.",
       "meta": {
-        "explanation": "This error is caused when a call to 'get_db_connection' is made with the 'from_config' argument set to True, but other arguments referenced config keys that do not exist."
+        "explanation": "This error is caused when a call to 'get_db_connection' is made with the 'from_config' or 'from_args' argument set to True, but the username and/or password were not valid.  If 'from_config' is set to True this typically means that the key in the config file is invalid or missing.  If 'from_args' is set to True this typically means that the 'username' or 'password' argument is None or an empty string."
       }
     },
     "GET-DB-CONNECTION-FROM-CONFIG-HAS-MISSING-HOST": {
