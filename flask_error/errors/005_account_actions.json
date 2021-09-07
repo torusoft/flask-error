@@ -1,0 +1,37 @@
+{
+  "ACCOUNT_ACTIONS": {
+    "PASSWORD_RESETS": {
+      "ACCOUNT_NOT_ACTIVATED": {
+        "id": "005-000001",
+        "title": "Reset request denied",
+        "detail": "This accounts password cannot be reset because it is not currently activated",
+        "meta": {}
+      },
+      "INVALID_EMAIL_FORMAT": {
+        "id": "005-000002",
+        "title": "Reset request denied",
+        "detail": "The provided email is not a valid email address.",
+        "meta": {}
+      },
+      "UNKNOWN_EMAIL_ADDRESS": {
+        "id": "005-000003",
+        "title": "Reset request denied",
+        "detail": "The provided email does not match the email for this account.",
+        "meta": {}
+      },
+      "DB_ERROR_FETCHING_ACCOUNT": {
+        "id": "005-000004",
+        "title": "Reset request denied",
+        "detail": "The password reset request did not commplete due to an error looking up the account.",
+        "meta": {}
+      },
+      "DB_ERROR_SAVING_RESET_TOKEN": {
+        "id": "005-000005",
+        "title": "Reset request denied",
+        "detail": "The password reset request did not commplete due to an while preparing the reset token.",
+        "meta": {}
+      }
+
+    }
+  }
+}
