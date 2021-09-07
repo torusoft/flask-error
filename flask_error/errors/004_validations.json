@@ -1,0 +1,29 @@
+{
+  "VALIDATIONS": {
+    "POST_DATA_EXPECTED": {
+        "id": "004-000001",
+        "title": "Invalid Request",
+        "detail": "An attempt to perform an action was made, but no data was included in the request.",
+        "meta": {
+          "explanation": "This error occurs when no post data has been included in the request."
+        }
+      },
+      "INCORRECT_ATTRIBUTE_COUNT": {
+        "id": "004-000002",
+        "title": "Invalid Request",
+        "detail": "An attempt to perform an action was made, but the required number of data attrbutes is incorrect.",
+        "meta": {
+          "explanation": "This error occurs when the post data does not contain the number of attributes that is expected."
+        }
+      },
+      "MISSING_KEYS": {
+          "id": "004-000003",
+          "title": "Invalid Request",
+          "detail": "An attempt to perform an action was made, but the data provided is invalid.",
+          "meta": {
+            "explanation": "This error occurs when the specified attribute is missing from the request."
+          }
+      }
+
+  }
+}
