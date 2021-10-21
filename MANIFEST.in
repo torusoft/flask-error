@@ -3,7 +3,7 @@ include HISTORY.rst
 include LICENSE
 include README.rst
 
-recursive-include flask_error/error *
+recursive-include flask_error/errors *
 
 recursive-include tests *
 recursive-exclude * __pycache__
