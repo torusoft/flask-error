@@ -1,5 +1,31 @@
 {
   "ACCOUNT_ACTIONS": {
+    "ACCOUNT_ACTIVATION": {
+      "DB_ERROR_FETCHING_ACCOUNT": {
+        "id": "005-000100",
+        "title": "Activation failed",
+        "detail": "The account activation request did not complete due to an error looking up the account.",
+        "meta": {}
+      },
+      "MISMATCHED_TOKENS": {
+        "id": "005-000101",
+        "title": "Activation failed",
+        "detail": "The account activation request failed because the provided token does not match the expected activation token.",
+        "meta": {}
+      },
+      "INVALID_ACCOUNT_STATE": {
+        "id": "005-000102",
+        "title": "Activation failed",
+        "detail": "This account cannot be activated.",
+        "meta": {}
+      },
+      "DB_ERROR_ACTIVATING_ACCOUNT": {
+        "id": "005-000103",
+        "title": "Activation failed",
+        "detail": "The account activation failed due because the account update operation failed.",
+        "meta": {}
+      }
+    },
     "PASSWORD_RESETS": {
       "ACCOUNT_NOT_ACTIVATED": {
         "id": "005-000001",
@@ -22,7 +48,7 @@
       "DB_ERROR_FETCHING_ACCOUNT": {
         "id": "005-000004",
         "title": "Reset request denied",
-        "detail": "The password reset request did not commplete due to an error looking up the account.",
+        "detail": "The password reset request did not complete due to an error looking up the account.",
         "meta": {}
       },
       "DB_ERROR_SAVING_RESET_TOKEN": {
@@ -30,8 +56,19 @@
         "title": "Reset request denied",
         "detail": "The password reset request did not commplete due to an while preparing the reset token.",
         "meta": {}
+      },
+      "MISMATCHED_TOKENS": {
+        "id": "005-000006",
+        "title": "Reset request denied",
+        "detail": "The password reset failed because the provided token does not match the expected reset token.",
+        "meta": {}
+      },
+      "DB_ERROR_UPDATING_PASSWORD": {
+        "id": "005-000005",
+        "title": "Password Update Failed",
+        "detail": "The password was not updated because the save operation failed.",
+        "meta": {}
       }
-
     }
   }
 }
