@@ -24,7 +24,10 @@ class FlaskApiError():
 
     def init_app(self, app):
         [self.load_definitions(source) for source in self._definition_folders + self._definition_files]
-        app.before_request(self._before_request)
+
+        with app.app_context():
+            self._before_request()
+
         app.teardown_appcontext(self.teardown)
 
     def teardown(self, exception):
