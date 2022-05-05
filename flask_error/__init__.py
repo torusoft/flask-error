@@ -3,4 +3,4 @@ from .flask_error import FlaskApiError
 
 __author__ = """Lee Lunn"""
 __email__ = 'lee@torusoft.com'
-__version__ = '0.1.0'
+__version__ = '0.2.0'
